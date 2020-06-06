@@ -1,0 +1,56 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int Cpp(int arr)
+{
+    int c;
+    for(c=1;c<=arr;c++)
+    {
+        return c;
+    }
+}
+int Bpp(int c)
+{
+    int b;
+    for(b=1;b<=c;b++)
+    {
+        if(b<=c)
+        {
+            return b;
+        }
+    }
+}
+int App(int b, int c, int arr)
+{
+    int count1=0;
+    int k=(c*c)-(b*b)+1;
+    float p=pow(k,0.5);
+    int a=p;
+    if((a==p)&&(a<=b)&&((a+b+c)<=arr))
+    {
+        count1++;
+        return count1;
+    }
+}
+int main()
+{
+    int n;
+    int count=0;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        int c=Cpp(arr[i]);
+        int b=Bpp(c);
+        int a=App(b,c,arr[i]);
+        count=count+a;
+        cout<<count<<endl;
+    }
+}
